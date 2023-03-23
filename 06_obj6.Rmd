@@ -1,0 +1,145 @@
+# Objective 6: Explore relationships between N:ME ratio, crude protein, and bulk milk urea
+The objective is to explore the relationships between nitrogen to ME ratio in the diet, crude protein concentration in total diet, and bulk milk urea (BMU) concentration.
+
+```{css, echo = FALSE} 
+.math {
+  font-size: small;
+}
+```
+```{r data-setup-obj6, echo=F, eval=T, message=FALSE, warning=F}
+# Data set up
+
+setwd('C:/Users/greg/OneDrive - EpiVets/Documents/EPIVETS TRIAL WORK/DairyNZ statistical analysis/MUN data analysis/Jan 2023 analysis/EpiVets_working_ONIFS_book')
+
+library(plyr)
+library(reshape)
+library(ggplot2)
+library(gridExtra)
+library(reshape2)
+library(lubridate)
+library(car)
+library(dplyr)
+library(extrafont)
+library(arsenal)
+library(gt)
+library(gtsummary)
+library(ggrepel)
+library(gtools)
+library(flextable)
+library(ggpattern)
+library(ggpubr)
+library(grid)
+
+theme <- theme_bw()+
+  theme(legend.position = "bottom") +
+  theme(axis.title.x = element_text(face="bold", colour="black", size=10),
+        axis.text.y  = element_text(size=10),
+        axis.text.x  = element_text(size=10),
+        axis.title.y = element_text(face="bold", colour="black", size=10),
+        panel.grid.minor=element_blank(),
+        panel.grid.major=element_blank())
+
+theme_gtsummary_journal(journal = "jama")
+
+#################################################################################################
+#################################################################################################
+
+# IMPORT CSV AND FORMAT DATA CORRECTLY
+
+vars <- read.csv('variable_descriptions.csv', sep = ",", header = T)
+
+# Select  relevant variables in dat based on vars
+dat <- read.csv('raw_data_20.03.23.csv', sep = ",", header = T) %>%
+  rename_at(vars(vars$DairyNZ.name), ~ vars$New.code.Jan.23) %>%
+  dplyr::select(any_of(vars[vars$In.previous==1, ]$New.code.Jan.23)) %>%
+  dplyr::select(sort(names(.))) %>%
+  dplyr::relocate(c("farm", "visit", "date", "reg", "grp")) %>%
+  mutate_at(vars(-farm, -visit, -date, -reg, -grp), as.numeric) %>%
+  mutate_at(vars(farm, visit, reg, grp), as.factor) %>%
+  mutate_at("date", mdy)
+
+
+# Order on farm and visit, with farms ordered alphanumerically:
+dat <- dat[mixedorder(as.character(dat$farm)), ]
+rownames(dat) <- 1:nrow(dat)
+dat$farm <- factor(dat$farm, levels=mixedsort(levels(dat$farm), decreasing=F))
+
+dat <- dat %>%
+  mutate(nme_bc_h_cat = cut(nme_bc_h, breaks = c(1.3, 2.5, 2.8, 3.0, 4.2)), cp_bc_h_cat = cut(cp_bc_h, breaks = c(90, 170, 195, 210, 290)))
+
+levels(dat$nme_bc_h_cat) <- c("1.40-2.49", "2.50-2.79", "2.80-2.99", "3.00-3.74")
+levels(dat$cp_bc_h_cat) <- c("95-169", "170-194", "195-210", "211-282")
+
+```
+
+## Methods
+BMU was simply plotted against crude protein, with separate plots and lines of best fit for each of four approximately equally sized categories of N:ME ratio. 
+
+## Results
+
+**Figure 1. Relationships between A) bulk milk urea concentration and nitrogen to ME ratio in the diet, B) bulk milk urea concentration and crude protein concentration in total diet, and C) nitrogen to ME ratio in the diet and crude protein concentration in total diet, calculated from Hills Laboratory data, in a study of bulk milk urea concentrations on 38 New Zealand dairy farms.**
+
+``` {r fig1.6, echo=F, eval=T, message=FALSE, warning=F, fig.width=10, fig.height=5}
+plotdata <- dat %>%
+  dplyr::select(nme_bc_h_cat, cp_bc_h, bmu, nme_bc_h, cp_bc_h_cat)
+
+# BMU ~ NME
+p1 <- ggplot(plotdata, aes(x=nme_bc_h, y=bmu)) +
+  geom_point() +
+  geom_smooth(method='lm', inherit.aes = T) +
+  scale_x_continuous(name = "Nitrogen to ME ratio in the diet (g/MJ)") +
+  scale_y_continuous(name = "Bulk milk urea concentration\n(mg/dl)") +
+  theme
+
+# BMU ~ CP
+p2 <- ggplot(plotdata, aes(x=cp_bc_h, y=bmu)) +
+  geom_point() +
+  geom_smooth(method='lm', inherit.aes = T) +
+  scale_x_continuous(name = "Crude protein concentration in\ntotal diet (g/kg DM)") +
+  scale_y_continuous(name = "Bulk milk urea concentration\n(mg/dl)") +
+  theme
+
+# NME ~ CP
+p3 <- ggplot(plotdata, aes(x=cp_bc_h, y=nme_bc_h)) +
+  geom_point() +
+  geom_smooth(method='lm', inherit.aes = T) +
+  scale_x_continuous(name = "Crude protein concentration in\ntotal diet (g/kg DM)") +
+  scale_y_continuous(name = "Nitrogen to ME ratio in the diet (g/MJ)") +
+  theme
+
+ggarrange(p1, p2, p3, labels = c("A", "B", "C"), ncol = 3, legend = "bottom", common.legend = T)
+
+```
+
+There are clear positive associations between all three pairs of variables. Nitrogen to ME ratio in the diet and crude protein concentration in total diet are clearly very strongly correlated.
+
+
+**Figure 2. Relationships between A) bulk milk urea concentration and crude protein concentration in total diet at different categories of nitrogen to ME ratio in the diet, and B) bulk milk urea concentration and nitrogen to ME ratio in the diet at different categories of crude protein concentration in total diet, calculated from Hills Laboratory data, in a study of bulk milk urea concentrations on 38 New Zealand dairy farms.**
+
+``` {r fig2.6, echo=F, eval=T, message=FALSE, warning=F, fig.width=10, fig.height=20}
+# BMU ~ CP across categories of NME
+p4 <- ggplot(plotdata, aes(x=cp_bc_h, y=bmu, col=nme_bc_h_cat)) +
+  geom_point() +
+  geom_smooth(method='lm', inherit.aes = T) +
+  scale_x_continuous(name = "Crude protein concentration in total diet (g/kg DM)") +
+  scale_y_continuous(name = "Bulk milk urea concentration\n(mg/dl)") +
+  scale_color_discrete(name="Nitrogen to ME ratio in the diet (g/MJ)") +
+  theme
+
+# BMU ~ NME across categories of CP
+p5 <- ggplot(plotdata, aes(x=nme_bc_h, y=bmu, col=cp_bc_h_cat)) +
+  geom_point() +
+  geom_smooth(method='lm', inherit.aes = T) +
+  scale_x_continuous(name = "Nitrogen to ME ratio in the diet (g/MJ)") +
+  scale_y_continuous(name = "Bulk milk urea concentration\n(mg/dl)") +
+  scale_color_discrete(name="Crude protein concentration in total diet (g/kg DM)") +
+  theme
+
+ggarrange(p4, p5, labels = c("A", "B"), ncol = 1, legend = "bottom", common.legend = F)
+
+```
+
+The first plot shows that BMU increases by only a small amount with crude protein concentration within each category of N:ME ratio, and the gradient is consistent, while it clearly increases as N:ME ratio increases. On the other hand, the second plot shows that BMU increases more steeply with N:ME ratio and the gradient is not consistent across crude protein categories. BMU increases slightly across crude protein categories. This plot is reminiscent of the plot between BMU and N:ME ratio across categories of total nitrogen intake in objective 2.
+
+## Concluding remarks
+As N:ME ratio increases, so do both BMU and crude protein concentration in the diet. However, the relationship between BMU and N:ME ratio appears stronger than between BMU and crude protein, and crude protein content may alter the relationship between BMU and N:ME ratio.
