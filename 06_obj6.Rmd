@@ -9,7 +9,7 @@ The objective is to explore the relationships between nitrogen to ME ratio in th
 ```{r data-setup-obj6, echo=F, eval=T, message=FALSE, warning=F}
 # Data set up
 
-setwd('C:/Users/greg/OneDrive - EpiVets/Documents/EPIVETS TRIAL WORK/DairyNZ statistical analysis/MUN data analysis/Jan 2023 analysis/EpiVets_working_ONIFS_book')
+setwd('C:/Users/greg/OneDrive - EpiVets/Documents/R/bookdown-explore')
 
 library(plyr)
 library(reshape)

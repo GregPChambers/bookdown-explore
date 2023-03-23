@@ -1,0 +1,117 @@
+DairyNZ name,Old code Oct 22,New code Jan 23,Description,Units,Source,Include,In previous,Extended,Tidy_name
+area_offered_grazing_ha,,graz_area,Area offered in grazing break,ha,Farm observation,1,0,0,Area offered in grazing break
+Cas,,bmcas,Average milk casein  - average of matched collections,g/d,Fonterra,1,0,0,Average milk casein of matched collections
+Casein_cow_d,,cas_cow_d,Casein yield per cow per day,g/d,Fonterra,1,0,0,Casein yield per cow per day
+cows_in_vat,,ncow_vat,Cows in vat at time of visit,Count,Farm observation,1,0,0,Cows in vat at time of visit
+cows_per_ha,,sr_head,Stocking rate,cows/ha,Farm observation,1,0,0,Stocking rate (farm observed)
+CV_Ashdiet_backcalc,ash_bc_c,ash_bc_c,Ash concentration in total diet,g/kg DM,CVAS,1,1,0,Ash concentration in total diet (CVAS)
+CV_CPdiet_backcalc,,cp_bc_c,Crude protein concentration in total diet,g/kg DM,CVAS,1,0,0,Crude protein concentration in total diet (CVAS)
+CV_Diet_Na,,na_diet_c,Total dietary sodium concentration (Pasture_kgDM_intake_24hr * CV_Pasture_Na + Supp_kgDM_intake_24hr * CV_Supp_Na)/(Pasture_kgDM_intake_24hr + Supp_kgDM_intake_24hr) *10),g/100g DM,CVAS,1,0,1,Total dietary sodium concentration
+CV_DMI_past_backcalc,,dmip_bc_c,Dry matter intake from pasture - back-calculated,kg/d,CVAS,1,0,0,"Dry matter intake from pasture (back-calculated, CVAS)"
+CV_DMI_total_backcalc,,dmi_tot_bc_c,Total dry matter intake (pasture+supplement) - back-calculated,kg/d,CVAS,1,0,0,"Total DM intake (back-calculated, CVAS)"
+CV_ERDPdiet_backcalc,erdp_c,erdp_bc_c,Effective rumen degradable protein in the diet (calculated from soluble protein and estimated rates of passage based on intakes),g/kg DM,CVAS,1,1,0,Effective rumen degradable protein in the diet
+CV_Kdiet_backcalc,k_bc_c,k_bc_c,Potassium concentration in total diet,g/kg DM,CVAS,1,1,0,K concentration in total diet
+CV_MEdiet_backcalc,,me_diet_bc_c,Metabolisable energy concentration in total diet ,MJ/kg DM,CVAS,1,0,1,ME concentration in total diet (CVAS)
+CV_MPExcessN_backcalc,exmp_c,exmp_bc_c,Excess of metabolisable protein relative to the MP requirements for production and maintenance,g,CVAS,1,1,0,Excess MP relative to MP requirements for prod & maint
+CV_N_ME_g_MJ_backcalc,nme_bc_c,nme_bc_c,Nitrogen to ME ratio in the diet,g/MJ,CVAS,1,1,0,N:ME ratio in the diet (CVAS)
+CV_N_NFC_g_g_backcalc,nnfc_c,nnfc_bc_c,Nitrogen to non-fibre carbohydrate ratio in the diet,g/g,CVAS,1,1,0,N to non-fibre carbohydrate ratio in the diet
+CV_N_NSC_g_g_backcalc,nnsc_c,nnsc_bc_c,Nitrogen to non-structural carbohydrate ratio in the diet,g/g,CVAS,1,1,0,N to non-structural carbohydrate ratio in the diet
+CV_Ndiet_backcalc,ntot_bc_c,ntot_bc_c,N concentration in total diet,g/kg DM,CVAS,1,1,0,N concentration in total diet
+CV_NI_LW_backcalc,ninkg_c,ninkg_bc_c,Nitrogen intake per kg liveweight,g/kg LW,CVAS,1,1,0,N intake per kg liveweight (CVAS)
+CV_Pct_past_backcalc,,pcp_bc_c,Percent of pasture DM in total DM intake (back-calculated),%,CVAS,1,0,0,"% pasture DM in total DM intake (back-calculated, CVAS)"
+CV_RDPdiet_backcalc,rdp_bc_c,rdp_bc_c,Rumen degradable protein concentration in total diet,g/kg DM,CVAS,1,1,0,Rumen degradable protein concentration in total diet
+CV_RumenExcessN2_backcalc,exrdp_c,exrdp_bc_c,Excess of RDP relative to the potential microbial protein requirements,g,CVAS,1,1,0,Excess RDP relative to potential microbial protein reqmts
+CV_TotalMEI_obs,,tmei_obs_c,Total metabolisable energy intake ,MJ/d,CVAS,1,0,0,Total metabolisable energy intake 
+CV_TotalNI_backcalc,tni_bc_c,tni_bc_c,Total nitrogen intake,g/d,CVAS,1,1,0,Total nitrogen intake (CVAS)
+date_collected,date,date,"Date of visit, when samples were collected.",Date,Farm observation,1,1,0,"Date of visit, when samples were collected"
+days_since_last_grazed,,dslg,Days since last grazed,d,Farm observation,1,0,0,Days since last grazed
+Distance,,Distance,Distance in between farm and NIWA weather station,km,NIWA,1,0,0,Distance from farm to weather station
+DMI_past_kg_d_obs,,dmip_farm,Dry matter intake from pasture - observed at farm,kg/d,Farm observation,1,0,0,Dry matter intake from pasture - observed at farm
+DMI_supp_kg_d_obs,,dmisup_farm,Dry matter from supplement - observed at farm,kg/d,Farm observation,1,0,0,Dry matter from supplement - observed at farm
+effective_area_ha,,ha_eff_farm,Farm effective area in Ha,Ha,Farm observation,1,0,0,Farm effective area in Ha
+effluent_total_area_ha,,ha_effl,Area on farm (Ha) that effluent is applied,Ha,Farm observation,1,0,0,Area on farm (Ha) that effluent is applied
+farm_id,farm,farm,Farm,Categorical,Farm observation,1,1,0,Farm
+Fat,bulk_fat,bmfat,Average milk fat %  - average of matched collections,%,Fonterra,1,1,0,Average milk fat %  - average of matched collections
+Fat_cow_d,fat_cow,fat_cow_d,Milk fat yield per cow per day,g/d,Fonterra,1,1,0,Milk fat yield per cow per day
+FEI,,fei,Fat evaluation index  - average of matched collections,(unitless),Fonterra,1,0,0,Fat evaluation index - average of matched collections
+fonterra_breed,,breed,Breed ,Categorical,Fonterra,1,0,1,Breed 
+fonterra_exported_product_kgN_pe,,n_export,Exported product,kg N/ha,Fonterra,1,0,0,Exported product
+fonterra_imported_feed_kgN_per_h,,n_import,Imported feed,kg N/ha,Fonterra,1,0,1,Imported feed N
+fonterra_n_fertiliser_kgN_per_ha,NA,fert_ha_font,N fertiliser input (was previously total_n_fertiliser_kg_ha),kg N/ha,Fonterra,1,1,0,N fertiliser input
+fonterra_peak_cow_number,,peak_ncow_font,Peak cow number at farm reported,Count,Fonterra,1,0,0,Peak cow number at farm reported
+fonterra_production_kgMS_per_cow,NA,ms_cow_font,Milk solids production per cow,kg/MS/cow,Fonterra,1,1,1,Milk solids production per cow
+fonterra_production_total_kgMS,,ms_farm_font,Total milk solids production,kg MS/year,Fonterra,1,0,1,Total milk solids production
+fonterra_purchased_N_surplus_kgN,,n_purch,To be confirmed,kg,Fonterra,1,0,1,N purchased
+fonterra_somatic_cell_count_cell,,scc_font,Somatic cell count,Count/ml,Fonterra,1,0,0,Somatic cell count
+fonterra_stocking_rate,,sr_font,Stocking rate,cows/ha,Fonterra,1,0,1,Stocking rate (Fonterra)
+FptCF,,fptcf,Freezing point,°C,Fonterra,1,0,0,Freezing point
+H_Ashdiet_backcalc,ash_bc_h,ash_bc_h,Ash concentration in total diet,g/kg DM,Hills,1,1,0,Ash concentration in total diet (Hills)
+H_CPdiet_backcalc,cp_bc_h,cp_bc_h,Crude protein concentration in total diet,g/kg DM,Hills,1,1,0,Crude protein concentration in total diet (Hills)
+H_DMI_past_backcalc,,dmip_bc_h,Dry matter intake from pasture - back-calculated,kg/d,Hills,1,0,0,"Dry matter intake from pasture (back-calculated, Hills)"
+H_DMI_Total_backcalc,,dmi_tot_bc_h,Total dry matter intake (pasture+supplement) - back-calculated,kg/d,Hills,1,0,0,"Total DM intake (back-calculated, Hills)"
+H_MEdiet_backcalc,,me_diet_bc_h,Metabolisable energy concentration in total diet ,MJ/kg DM,Hills,1,0,1,ME concentration in total diet (Hills)
+H_MEdiet_obs,,med_obs_h,Metabolisable energy concentration in total diet ,MJ/kg DM,Farm observation,1,0,1,ME concentration in total diet (observed)
+H_N_ME_g_MJ_backcalc,nme_bc_h,nme_bc_h,Nitrogen to ME ratio in the diet,g/MJ,Hills,1,1,0,N:ME ratio in the diet (Hills)
+H_N_SSS_g_g_backcalc,nsss_bc_h,nsss_bc_h,Nitrogen to soluble sugar plus starch raio in the diet,g/g,Hills,1,1,0,N to soluble sugar plus starch ratio in the diet
+H_Net_N_surplus_backcalc,nns_h,nns_bc_h,Nitrogen surplus as N intake minus N in milk + N for maintenance,g,Hills,1,1,0,N surplus (N intake - N in milk + N for maint)
+H_NI_LW_backcalc,ninkg_h,ninkg_bc_h,Nitrogen intake per kg liveweight,g/kg LW,Hills,1,1,0,N intake per kg liveweight (Hills)
+H_Pct_past_backcalc,,pcp_bc_h,Percent of pasture DM in total DM intake (back-calculated),%,Hills,1,0,0,"% pasture DM in total DM intake (back-calculated, Hills)"
+H_TotalNI_backcalc,tni_bc_h,tni_bc_h,Total nitrogen intake,g/d,Hills,1,1,0,Total nitrogen intake (Hills)
+irrigation_total_area_ha,,ha_irr,Irrigated area of farm (Ha),Ha,Farm observation,1,0,0,Irrigated area of farm
+kg_cow_ha,sr,sr_kg,Kg of cow body weight per Ha effective area (based on average cow body weight for the farm),kg/Ha,Farm observation,1,1,0,Kg cow/Ha effective
+Lactose,,bmlact,Average milk lactose %  - average of matched collections,%,Fonterra,1,0,0,Average milk lactose %  - average of matched collections
+LactY_cow_d,,lactose_cow_d,Milk lactose yield per cow per day,g/d,Fonterra,1,0,0,Milk lactose yield per cow per day
+max_milking_interval,,int_milk_max,Maximum milking interval (between milkings) ,h,Farm observation,1,0,1,Maximum milking interval (between milkings) 
+mean_lwt,,lvwt_ave,Mean cow body weight - measured in mid lactation based on 100 cows or 10 % of herd (whichever was greater),kg,Farm observation,1,0,1,Mean cow BW in mid lactation based on 100 or 10% cows
+mean_milk_24hr_vol,,milk_vol_24_ave,24hr Milk volume - Milk volume data was summed for all matching milk collections. The time intervals (hrs) between collections were summed. Total volume was divided by the total hours and multiplied by 24 to give an approx. 24hr milk volume.,L,Fonterra,1,0,0,24hr Milk volume
+Milk_N_cow_d,,nmilk_tp_cow_d,Milk nitrogen secreted per cow per day (as true protein),g/d,Fonterra,1,0,0,Milk N secreted per cow per day (as true protein)
+milk_protein_to_fat,,mp_fat,Protein to fat ratio,Ratio,Fonterra,1,0,1,Protein to fat ratio
+Milking_Cycle,,freq,Milking frequency cycle,Ratio,DairyNZ,1,0,1,Milking frequency cycle
+MUN_cow_g,,mun_cow_d,Milk urea nitrogen secreted per day,g/d,Farm observation,1,0,0,Milk urea nitrogen secreted per day
+MY_cow_d,,milk_wt_cow_d,Milk yield per cow (average for the farm),kg/d,Fonterra,1,0,0,Milk yield per cow (average for the farm)
+Pasture_c4_grasses_percent,,c4_pc,Pasture C4 grass %,%,Farm visit,1,0,0,Pasture C4 grass %
+Pasture_dead_percent,,dead_pc,Pasture dead matter %,%,Farm visit,1,0,0,Pasture dead matter %
+Pasture_dry_matter_percent,,pdm_pc_h,Hills - average dry matter % of pasture samples,%,Hills,1,0,0,Average dry matter % of pasture samples (Hills)
+Pasture_herbs,,herb_pc,Pasture herb %,%,Farm visit,1,0,1,Pasture herb %
+Pasture_kgDM_intake_24hr,,pastkgdm_24,kgDM of pasture eaten in 24 hrs - based on pre and post grazing pasture mass recorded at each visit. ,kg,Farm observation,1,0,0,kgDM pasture eaten in 24 hrs based on pre & post grazing
+Pasture_mean_leaf_stage,,leaf,Average leaf stage for non-reproductive ryegrass tillers,Count,Farm observation,1,0,0,Average leaf stage for non-reproductive ryegrass tillers
+pasture_offered_per_cow,,p_offer_cow,Pasture offered per cow in break,kg/DM,Farm observation,1,0,0,Pasture offered per cow in break
+Pasture_other_grass_percent,,othergrass_pc,Pasture other grass %,%,Farm observation,1,0,0,Pasture other grass %
+Pasture_other_legume_percent,,other_leg_pc,Pasture other legume %,%,Farm observation,1,0,0,Pasture other legume %
+Pasture_perennial_ryegrass_perce,,pr_pc,Pasture perennial ryegrass %,%,Farm observation,0,0,0,Pasture perennial ryegrass %
+Pasture_r_white_percent,,repro_wc_pc,Percentage of reproductive white clover,%,Farm observation,0,0,0,Pasture reproductive white clover %
+Pasture_repro_perennial_ryegrass,,repro_pr_pc,Botanical composition,%,Farm observation,0,0,0,Pasture reproductive perennial ryegrass %
+Pasture_total_perennial_ryegrass,,tot_pr_pc,Botanical composition,%,Farm observation,1,0,0,Pasture total perennial ryegrass %
+Pasture_total_white_clover_perce,,tot_wc_pc,Botanical composition,%,Farm observation,1,0,0,Pasture total white clover %
+Pasture_weeds_percent,,weeds_pc,Pasture weeds %,%,Farm observation,1,0,0,Pasture weeds %
+Pasture_white_clover_percent,,wc_pc,Pasture white clover %,%,Farm observation,0,0,0,Pasture white clover %
+Pct_past_obs,,Pct_past_obs,Percent of DM intake from pasture ,%,Farm observation,1,0,1,Percentage DM intake from pasture 
+Protein,bulk_prot,bmp,Average milk protein %  - average of matched collections,%,Fonterra,1,1,0,Average milk protein %  - average of matched collections
+ProtY_cow_d,prot_cow,mp_cow_d,Milk protein yield per cow per day,g/d,Fonterra,1,1,0,Milk protein yield per cow per day
+Rain_Max,,Rain_Max,Maximum daily rainfall for the measurement period relating to farm visit sample data,mm/day,NIWA,1,0,0,Maximum daily rainfall
+Rain_mean,,Rain_mean,Mean daily rainfall for the measurement period relating to farm visit sample data,mm/day,NIWA,1,0,0,Mean daily rainfall
+Rain_Min,,Rain_Min,Minimum daily rainfall for the measurement period relating to farm visit sample data,mm/day,NIWA,1,0,0,Minimum daily rainfall
+Rain_Total,,Rain_Total,Total rainfall for the measurement period relating to farm visit sample data,mm,NIWA,1,0,0,Total rainfall
+region,reg,reg,Waikato or Canterbury ,Categorical,Farm observation,1,1,0,Region
+residual,,res,Post-grazing pasture mass measured by RPM,kg/DM,Farm observation,1,0,0,Post-grazing pasture mass measured by RPM
+SCC,,scc,Somatic cell count  - average of matched collections,Count/ml,Fonterra,1,0,1,Somatic cell count  - average of matched collections
+Supp_dry_matter_percent,,suppdm_pc_h,Hills - average dry matter % of supplement samples,%,Hills,1,0,0,Average dry matter % of supplement samples (Hills)
+Supp_kgDM_intake_24hr,,suppdc_kg,kgDM of supplement fed in 24hrs,kg,Farm observation,1,0,1,kgDM of supplement fed in 24hrs
+Supp_types,,supp_typ,Supplement types used at farm,Categorical,Farm observation,1,0,1,Supplement types used on farm
+T_S,bulk_ms,bmms,Average milk total solids %  - average of matched collections,%,Fonterra,1,1,0,Average milk total solids %  - average of matched collections
+Temp,,bmtemp,Milk temperature at time of collection from farm - average of matched collections,°C,Fonterra,1,0,0,Milk temp - average of matched collections
+time_in_paddock_h,,time_pad,Time in paddock,h,Farm observation,1,0,0,Time in paddock
+Time_into_break,,Time_into_break,Relates to the farm visit and is the date time the cows started grazing the sampled pasture area,Date,Farm  visit,1,0,0,Time into break
+Time_out_break,,Time_out_break,Relates to the farm visit and is the date time the cows finished grazing the sampled pasture area,Date,Farm  visit,1,0,0,Time out of break
+Tmax_deg_C,,Tmax_deg_C,Maximum daily temperature for the measurement period relating to farm visit sample data,°C,NIWA,1,0,0,Maximum daily temperature
+Tmax_mean_deg_C,,Tmax_mean_deg_C,Mean maximum daily temperature for the measurement period relating to farm visit sample data,°C,NIWA,1,0,0,Mean maximum daily temperature
+Tmin_deg_C,,Tmin_deg_C,Minimum daily temperature for the measurement period relating to farm visit sample data,°C,NIWA,1,0,0,Minimum daily temperature
+Tmin_mean_deg_C,,Tmin_mean_deg_C,Mean minimum daily temperature for the measurement period relating to farm visit sample data,°C,NIWA,1,0,0,Mean minimum daily temperature
+TProt_cow_d,,tp_cow_d,Milk true protein yield per cow per day,g/d,Fonterra,1,0,0,Milk true protein yield per cow per day
+treatment,grp,grp,High or low MU group based on bulk MU in previous seasons,Categorical,Farm observation,1,1,0,Group
+True_P,bulk_trueprot,bmtp,True protein % excluding non protein N  - average of matched collections,%,Fonterra,1,1,0,True protein % excl nonprotein N - ave matched collections
+Urea,bmu,bmu,Average Milk urea (mg/dl) in bulk milk  - average of matched collections,mg/dl,Fonterra,1,1,0,Average bulk milk urea - average of matched collections
+Urea_cow_g,,milk_urea_cow_d,Urea secreted in milk per day,g/d,Fonterra,1,0,0,Urea secreted in milk per day
+visit,visit,visit,"Visit number - 1,2,3, or 4",Categorical,Farm observation,1,1,0,Visit number (1-4)
+Weather_Station,,Weather_Station,NIWA Cliflo Weather Station identifier,number code,NIWA,1,0,0,Weather station ID
+yield_kg_dm_ha,,pasture_kgdm_ha,Yield of pasture,kg/ha,Farm observation,1,0,0,Yield of pasture
